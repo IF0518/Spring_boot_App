@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bid for the request</title>
+</head>
+<body>
+<div>
+<form th:action="/bid" method="post">
+<label>Business</label><br/>
+<input type="text" name="business" placeholder="Business name"/>
+<label>Description</label><br/>
+<textarea  name="description" style="width:380; height:130" placeholder="Give description of yourself to the customer"></textarea><br/>
+<input type="submit" value="Place bid"/>
+</form> 
+</div>
+</body>
+</html>

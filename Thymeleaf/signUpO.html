@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device=width, initial-scale=1.0">
+<link href="IndexCss.css" type="text/css" rel="stylesheet"/>
+<title>SignUp Offer Account</title>
+</head>
+<body>
+<div class ="form">
+<h1>SignUp Request Account</h1>
+<form th:action="/save" method="post" th:object="${custo}">
+<label for="firstname">First-name</label><br/>
+<input type="text" th:field="*{fname}"/><br/>
+<label for="lastname">LastName</label><br/>
+<input type="text" th:field="*{lname}"/><br/>
+<select th:field="*{business}">
+<option>Shop</option>
+<option>Company</option>
+<option>Service</option>
+<option>Real Estate</option>
+<option>Manufacturing</option>
+<option>Agriculture</option>
+<option>Other</option>
+</select>
+<label for="email">Email</label><br/>
+<input type="text" th:field="*{email}"/><br/>
+<label for="Phone">Phone</label><br/>
+<input type="text" th:field="*{phone}"/><br/>
+<label for="country">Country</label><br/>
+<input type="text" th:field="*{country}"/><br/>
+<input type="radio" th:field="*{male}" value="Male"/>
+<input type="radio" th:field="*{female}" value="Female"/>
+<input type="submit" value="Register"/>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device=width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" th:href="@{/css/styleCss.css}"/>
+<title>Welcome Into connector</title>
+</head>
+<body>
+<h1>Welcome Into Connector</h1>
+<div class="row">
+<div class="column1">
+<div class="container">
+<div class="dropdown">
+<button class="dropbut"><img th:src="@{/images/bar.png}" style="width:18px; height:20px"/></button>
+<div class="dropdown-con">
+<a th:href="@{/postRequest}">Post_request</a>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="column2">
+<div class="container">
+<h3><i>Connector</i></h3>
+</div>
+</div>
+
+
+<div class="column3">
+<div class="container">
+<form th:action="@{/search}" method="post">
+<input type = "search" name="keyword" th:value="${keyword}" size=40px placeholder="Search request"/>
+<button type="submit">Search</button>
+</form>
+</div>
+</div>
+
+<div class="column4">
+<div class="container">
+<a style="text-decoration:none; color:blue" th:href="@{/login}">SignIn</a>
+<a style="text-decoration:none; color:blue" th:href="@{/register}">SignUp</a>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column5" th:each="request : ${requests}">
+<div class="contain">
+<p>
+<a th:href="@{/fullDetail}" th:title="${request.name}"><img th:src="@{${request.upload_image_path}}" style="width:100px; height:150px"/><br/>
+<b>[[${request.title_description}]]</b>
+</a>
+</p>
+<h3>image here</h3>
+</div>
+</div>
+</div>
+</body>
+</html>

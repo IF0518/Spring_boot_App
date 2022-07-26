@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device=width, initial-scale=1.0"/>
+<link th:href="@{/css/styleCss.css}" type="text/css" rel="stylesheet"/>
+<title>SignUp Request Account</title>
+</head>
+<body>
+
+<div class ="form">
+<h1>SignUp Request Account</h1>
+<form th:action="@{/Register}" method="post" th:object="${customer}">
+<label for="firstname">First-name</label><br/>
+<input type="text" name="firstname" required/><br/>
+<label for="lastname">LastName</label><br/>
+<input type="text" name="lastname" required/><br/>
+<label for="email">Email</label><br/>
+<input type="text" name="email" required/><br/>
+<label for="password">Password</label><br/>
+<input type="text" name="password" required/><br/>
+<label for="Phone">Phone</label><br/>
+<input type="text" name="phone" required/><br/>
+<label for="country">Country</label><br/>
+<input type="text" name="country" required/><br/>
+<input type="radio" name="gender" th:checked=True value="Male" />Male
+<input type="radio" name="gender" value="Female"/>Female<br/>
+<label>Account:
+<th:block th:each="role : ${allRoles}">
+<input type="checkbox" name="roles"
+       th:text="${role.name}" 
+       th:value="${role.id}"   
+       /></th:block></label><br/>
+<input type="submit" value="Register"/>
+</form>
+</div>
+
+</body>
+</html>
